@@ -39,7 +39,7 @@ namespace CalculoFreteEstado
             this.label5 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -94,6 +94,7 @@ namespace CalculoFreteEstado
             // 
             this.txtFrete.Location = new System.Drawing.Point(100, 181);
             this.txtFrete.Name = "txtFrete";
+            this.txtFrete.ReadOnly = true;
             this.txtFrete.Size = new System.Drawing.Size(135, 23);
             this.txtFrete.TabIndex = 5;
             // 
@@ -123,6 +124,7 @@ namespace CalculoFreteEstado
             this.btnCalcular.TabIndex = 8;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // label6
             // 
@@ -134,14 +136,15 @@ namespace CalculoFreteEstado
             this.label6.TabIndex = 9;
             this.label6.Text = "Valor Final";
             // 
-            // label7
+            // lblResultado
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(26, 293);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(475, 102);
-            this.label7.TabIndex = 10;
+            this.lblResultado.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblResultado.Location = new System.Drawing.Point(26, 293);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(475, 102);
+            this.lblResultado.TabIndex = 10;
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbEstado
             // 
@@ -149,6 +152,11 @@ namespace CalculoFreteEstado
             this.cbEstado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
+            "AM",
+            "MG",
+            "RJ",
+            "SP"});
             this.cbEstado.Location = new System.Drawing.Point(426, 145);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(75, 23);
@@ -160,7 +168,7 @@ namespace CalculoFreteEstado
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 414);
             this.Controls.Add(this.cbEstado);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.label5);
@@ -193,7 +201,7 @@ namespace CalculoFreteEstado
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.ComboBox cbEstado;
     }
 }
